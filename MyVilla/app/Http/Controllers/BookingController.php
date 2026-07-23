@@ -22,11 +22,19 @@ class BookingController extends Controller
 
         $booking = Booking::create($validated);
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Booking saved successfully',
-            'booking' => $booking
-        ]);
+        // Format WA message
+        $waText = "Halo MyVilla, saya ingin memesan vila dengan detail berikut:\n\n";
+        $waText .= "*Nama Pemesan:* " . $booking->name . "\n";
+        $waText .= "*Check In:* " . $booking->check_in . "\n";
+        $waText .= "*Check Out:* " . $booking->check_out . "\n";
+        $waText .= "*Tamu:* " . $booking->adults . " Dewasa, " . $booking->children . " Anak-anak\n";
+        $waText .= "*Total Estimasi:* Rp " . number_format($booking->total_price, 0, ',', '.') . "\n\n";
+        $waText .= "Mohon info ketersediaan dan cara pembayarannya. Terima kasih.";
+
+        $waNumber = '6282247011652';
+        $waUrl = 'https://wa.me/' . $waNumber . '?text=' . urlencode($waText);
+
+        return redirect($waUrl);
     }
 
     // Admin Dashboard View

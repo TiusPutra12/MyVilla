@@ -230,51 +230,58 @@
                 <button class="close-modal" onclick="closeBookingModal()"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="booking-modal-body">
-                <div class="form-group">
-                    <label>Nama Lengkap</label>
-                    <input type="text" id="b_nama" placeholder="Masukkan nama Anda">
-                </div>
-                <div class="form-row">
+                <form action="{{ route('api.bookings.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="adults" id="hidden_adults" value="2">
+                    <input type="hidden" name="children" id="hidden_children" value="0">
+                    <input type="hidden" name="total_price" id="hidden_total_price" value="0">
+                    
                     <div class="form-group">
-                        <label>Check In</label>
-                        <input type="date" id="b_checkin" onchange="calculatePrice()">
+                        <label>Nama Lengkap</label>
+                        <input type="text" name="name" id="b_nama" placeholder="Masukkan nama Anda" required>
                     </div>
-                    <div class="form-group">
-                        <label>Check Out</label>
-                        <input type="date" id="b_checkout" onchange="calculatePrice()">
-                    </div>
-                </div>
-                
-                <div class="form-group guest-group">
-                    <label>Tamu</label>
-                    <div class="guest-counters">
-                        <div class="guest-counter-item">
-                            <span>Dewasa</span>
-                            <div class="counter-actions">
-                                <button type="button" onclick="updateGuest('dewasa', -1)"><i class="fa-solid fa-minus"></i></button>
-                                <span id="b_dewasa_cnt">2</span>
-                                <button type="button" onclick="updateGuest('dewasa', 1)"><i class="fa-solid fa-plus"></i></button>
-                            </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Check In</label>
+                            <input type="date" name="check_in" id="b_checkin" onchange="calculatePrice()" required>
                         </div>
-                        <div class="guest-counter-item">
-                            <span>Anak-anak</span>
-                            <div class="counter-actions">
-                                <button type="button" onclick="updateGuest('anak', -1)"><i class="fa-solid fa-minus"></i></button>
-                                <span id="b_anak_cnt">0</span>
-                                <button type="button" onclick="updateGuest('anak', 1)"><i class="fa-solid fa-plus"></i></button>
-                            </div>
+                        <div class="form-group">
+                            <label>Check Out</label>
+                            <input type="date" name="check_out" id="b_checkout" onchange="calculatePrice()" required>
                         </div>
                     </div>
-                </div>
+                    
+                    <div class="form-group guest-group">
+                        <label>Tamu</label>
+                        <div class="guest-counters">
+                            <div class="guest-counter-item">
+                                <span>Dewasa</span>
+                                <div class="counter-actions">
+                                    <button type="button" onclick="updateGuest('dewasa', -1)"><i class="fa-solid fa-minus"></i></button>
+                                    <span id="b_dewasa_cnt">2</span>
+                                    <button type="button" onclick="updateGuest('dewasa', 1)"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="guest-counter-item">
+                                <span>Anak-anak</span>
+                                <div class="counter-actions">
+                                    <button type="button" onclick="updateGuest('anak', -1)"><i class="fa-solid fa-minus"></i></button>
+                                    <span id="b_anak_cnt">0</span>
+                                    <button type="button" onclick="updateGuest('anak', 1)"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="booking-price-box">
-                    <span>Total Harga:</span>
-                    <strong id="b_total_harga">Rp 0</strong>
-                </div>
+                    <div class="booking-price-box">
+                        <span>Total Harga:</span>
+                        <strong id="b_total_harga">Rp 0</strong>
+                    </div>
 
-                <button class="btn-submit-booking" onclick="submitBooking()">
-                    <i class="fa-brands fa-whatsapp"></i> Kirim Pesanan via WhatsApp
-                </button>
+                    <button type="submit" class="btn-submit-booking">
+                        <i class="fa-brands fa-whatsapp"></i> Kirim Pesanan via WhatsApp
+                    </button>
+                </form>
             </div>
         </div>
     </div>
