@@ -122,8 +122,10 @@ function submitBooking() {
     // Submit to DB via AJAX
     fetch('/api/bookings', {
         method: 'POST',
+        credentials: 'same-origin', // Penting untuk hosting InfinityFree
         headers: {
             'Content-Type': 'application/json',
+            'Accept': 'application/json', // Memaksa Laravel merespons dengan JSON
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         body: JSON.stringify({
