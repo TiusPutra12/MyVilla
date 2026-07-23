@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="ReforceCode — Vila pesisir mewah dan eksklusif di destinasi paling menakjubkan di dunia. Temukan surga pribadi Anda.">
     <title>ReforceCode — Vila Pesisir Mewah</title>
 
@@ -31,13 +32,19 @@
 
             <h1>Surga Pribadi di Tepi Pantai</h1>
             <p>Koleksi vila mewah eksklusif di Seminyak, Bali. Rasakan ketenangan yang sesungguhnya.</p>
-            <div class="hero-actions">
-                <a href="#villas" class="btn-hero-primary">
-                    Jelajahi Vila <i class="fa-solid fa-arrow-right fa-xs"></i>
-                </a>
-                <a href="#gallery" class="btn-hero-ghost">
-                    <i class="fa-regular fa-images fa-xs"></i> Lihat Galeri
-                </a>
+            <div class="hero-stats">
+                <div>
+                    <div class="hero-stat-num">50+</div>
+                    <div class="hero-stat-lbl">Vila Premium</div>
+                </div>
+                <div>
+                    <div class="hero-stat-num">4.9</div>
+                    <div class="hero-stat-lbl">Rating Tamu</div>
+                </div>
+                <div>
+                    <div class="hero-stat-num">12K</div>
+                    <div class="hero-stat-lbl">Tamu Puas</div>
+                </div>
             </div>
         </div>
 
@@ -86,86 +93,46 @@
         </div>
     </div>
 
-    <!-- ===== VILLAS ===== -->
-    <section class="villas-section" id="villas">
+    <!-- ===== FASILITAS KAMAR GALLERY ===== -->
+    <section class="room-gallery-section" id="rooms">
         <div class="section-hdr" data-aos="fade-up">
             <div>
-                <span class="section-tag">Koleksi Eksklusif</span>
-                <h2 class="section-title">Vila Pilihan Kami</h2>
+                <span class="section-tag">Galeri</span>
+                <h2 class="section-title">Fasilitas Ruangan</h2>
             </div>
-            <a href="#" class="view-all-link">Lihat Semua <i class="fa-solid fa-arrow-right fa-xs"></i></a>
         </div>
 
-        <div class="villa-scroll-container" data-aos="fade-up" data-aos-delay="100">
-            <!-- Villa 1 -->
-            <div class="villa-card-new">
-                <div class="v-img-new">
-                    <div class="img-slider">
-                        <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2070&auto=format&fit=crop" alt="Villa 1" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop" alt="Villa 1 Room" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=2057&auto=format&fit=crop" alt="Villa 1 Bed" loading="lazy">
-                    </div>
-                    <div class="v-badge-top-left"><span class="badge-blue">FEATURED</span></div>
-                    <div class="v-badge-top-right"><span class="badge-dark">FOR SALE</span><span class="badge-dark">LEASEHOLD</span></div>
-                    <div class="v-price-overlay">$399,000</div>
-                </div>
-                <div class="v-body-new">
-                    <h3 class="v-title-new">Boho Japandi 2BR Leasehold Villa with Dual Pools & Rooftop in Munggu</h3>
-                    <div class="v-loc-new"><i class="fa-solid fa-location-dot"></i> Munggu, Mengwi, Badung, Bali</div>
-                    <div class="v-specs-new">
-                        <span><i class="fa-solid fa-bed"></i> 2</span>
-                        <span><i class="fa-solid fa-shower"></i> 2</span>
-                        <span><i class="fa-solid fa-ruler-combined"></i> 125 Lot Sqm</span>
-                    </div>
-                    <div class="v-type-new">Villa</div>
+        <div class="room-gallery-grid" data-aos="fade-up" data-aos-delay="100">
+            <!-- Kamar Tidur -->
+            <div class="room-card">
+                <img src="{{ asset('assets/view-kamar.jpeg') }}" alt="Kamar Tidur Nyaman" loading="lazy">
+                <div class="room-overlay">
+                    <h3>Kamar Tidur Nyaman</h3>
+                    <p>Ranjang luas dengan aksen bambu alami dan selimut bermotif indah untuk istirahat yang sempurna.</p>
                 </div>
             </div>
-
-            <!-- Villa 2 -->
-            <div class="villa-card-new">
-                <div class="v-img-new">
-                    <div class="img-slider">
-                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop" alt="Villa 2" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop" alt="Villa 2 Room" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" alt="Villa 2 Bath" loading="lazy">
-                    </div>
-                    <div class="v-badge-top-left"><span class="badge-blue">FEATURED</span></div>
-                    <div class="v-badge-top-right"><span class="badge-dark">FOR SALE</span><span class="badge-dark">LEASEHOLD</span></div>
-                    <div class="v-price-overlay">$350,000</div>
-                </div>
-                <div class="v-body-new">
-                    <h3 class="v-title-new">Boho Japandi 2BR Leasehold Villa with Rice Field Views in Munggu</h3>
-                    <div class="v-loc-new"><i class="fa-solid fa-location-dot"></i> Munggu, Mengwi, Badung, Bali</div>
-                    <div class="v-specs-new">
-                        <span><i class="fa-solid fa-bed"></i> 2</span>
-                        <span><i class="fa-solid fa-shower"></i> 2</span>
-                        <span><i class="fa-solid fa-ruler-combined"></i> 225 Lot Sqm</span>
-                    </div>
-                    <div class="v-type-new">Villa</div>
+            <!-- Ruang Dalam -->
+            <div class="room-card">
+                <img src="{{ asset('assets/view-tamu.jpeg') }}" alt="Sudut Bersantai" loading="lazy">
+                <div class="room-overlay">
+                    <h3>Sudut Bersantai</h3>
+                    <p>Area lesehan hangat dengan karpet lembut, lengkap dengan mini-fridge dan fasilitas pembuat teh/kopi.</p>
                 </div>
             </div>
-
-            <!-- Villa 3 -->
-            <div class="villa-card-new">
-                <div class="v-img-new">
-                    <div class="img-slider">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Villa 3" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2070&auto=format&fit=crop" alt="Villa 3 Room" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" alt="Villa 3 Bed" loading="lazy">
-                    </div>
-                    <div class="v-badge-top-left"><span class="badge-blue">FEATURED</span></div>
-                    <div class="v-badge-top-right"><span class="badge-dark">FOR SALE</span><span class="badge-dark">LEASEHOLD</span></div>
-                    <div class="v-price-overlay">$350,000</div>
+            <!-- Area Luar -->
+            <div class="room-card">
+                <img src="{{ asset('assets/view-luar.jpeg') }}" alt="Balkon Tepi Laut" loading="lazy">
+                <div class="room-overlay">
+                    <h3>Balkon Tepi Laut</h3>
+                    <p>Pintu kaca geser yang membuka langsung ke balkon kayu dengan pemandangan ombak laut yang menakjubkan.</p>
                 </div>
-                <div class="v-body-new">
-                    <h3 class="v-title-new">Boho Japandi 2BR Leasehold Villa with Sunken Poolside Bar in Munggu</h3>
-                    <div class="v-loc-new"><i class="fa-solid fa-location-dot"></i> Munggu, Mengwi, Badung, Bali</div>
-                    <div class="v-specs-new">
-                        <span><i class="fa-solid fa-bed"></i> 2</span>
-                        <span><i class="fa-solid fa-shower"></i> 2</span>
-                        <span><i class="fa-solid fa-ruler-combined"></i> 180 Lot Sqm</span>
-                    </div>
-                    <div class="v-type-new">Villa</div>
+            </div>
+            <!-- Fasad/Pemandangan -->
+            <div class="room-card">
+                <img src="{{ asset('assets/view-1.png') }}" alt="Sentuhan Estetik" loading="lazy">
+                <div class="room-overlay">
+                    <h3>Sentuhan Estetik</h3>
+                    <p>Dekorasi dinding buatan tangan dari rajutan makrame dan kerang yang memberikan nuansa pesisir otentik.</p>
                 </div>
             </div>
         </div>
@@ -248,12 +215,69 @@
     <!-- ===== CTA ===== -->
     <section class="cta-section" data-aos="fade-up">
         <h2>Siap Menemukan Surga Anda?</h2>
-        <p>Daftar sekarang dan nikmati pengalaman liburan pesisir mewah yang tak terlupakan.</p>
+        <p>Pesan sekarang dan nikmati pengalaman liburan pesisir mewah yang tak terlupakan.</p>
         <div class="cta-btns">
-            <a href="#" class="btn-cta-primary">Daftar Sekarang <i class="fa-solid fa-arrow-right fa-xs"></i></a>
-            <a href="#" class="btn-cta-ghost"><i class="fa-regular fa-message fa-xs"></i> Hubungi Agen</a>
+            <a href="#" class="btn-cta-primary" onclick="openBookingModal(event)">Pesan Sekarang <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+            <a href="https://wa.me/6282247011652" target="_blank" class="btn-cta-ghost"><i class="fa-regular fa-message fa-xs"></i> Hubungi Agen</a>
         </div>
     </section>
+
+    <!-- ===== BOOKING MODAL ===== -->
+    <div class="booking-modal-overlay" id="bookingModalOverlay">
+        <div class="booking-modal">
+            <div class="booking-modal-header">
+                <h3>Form Pemesanan</h3>
+                <button class="close-modal" onclick="closeBookingModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="booking-modal-body">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="b_nama" placeholder="Masukkan nama Anda">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Check In</label>
+                        <input type="date" id="b_checkin" onchange="calculatePrice()">
+                    </div>
+                    <div class="form-group">
+                        <label>Check Out</label>
+                        <input type="date" id="b_checkout" onchange="calculatePrice()">
+                    </div>
+                </div>
+                
+                <div class="form-group guest-group">
+                    <label>Tamu</label>
+                    <div class="guest-counters">
+                        <div class="guest-counter-item">
+                            <span>Dewasa</span>
+                            <div class="counter-actions">
+                                <button type="button" onclick="updateGuest('dewasa', -1)"><i class="fa-solid fa-minus"></i></button>
+                                <span id="b_dewasa_cnt">2</span>
+                                <button type="button" onclick="updateGuest('dewasa', 1)"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="guest-counter-item">
+                            <span>Anak-anak</span>
+                            <div class="counter-actions">
+                                <button type="button" onclick="updateGuest('anak', -1)"><i class="fa-solid fa-minus"></i></button>
+                                <span id="b_anak_cnt">0</span>
+                                <button type="button" onclick="updateGuest('anak', 1)"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-price-box">
+                    <span>Total Harga:</span>
+                    <strong id="b_total_harga">Rp 0</strong>
+                </div>
+
+                <button class="btn-submit-booking" onclick="submitBooking()">
+                    <i class="fa-brands fa-whatsapp"></i> Kirim Pesanan via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     @include('footers.footers')

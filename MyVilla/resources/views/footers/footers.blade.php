@@ -5,12 +5,13 @@
         </div>
         <ul class="footer-links">
             <li><a href="#">Kebijakan Privasi</a></li>
-            <li><a href="#">Syarat & Ketentuan</a></li>
+            <li><a href="#">Syarat &amp; Ketentuan</a></li>
             <li><a href="#">Hubungi Kami</a></li>
             <li><a href="#">Karir</a></li>
         </ul>
         <div class="footer-socials">
-            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </footer>
