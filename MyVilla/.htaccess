@@ -1,7 +1,16 @@
 Options -MultiViews -Indexes
 
+DirectoryIndex index.php
+
 RewriteEngine On
 
-# Redirect semua request ke folder public/
-RewriteCond %{REQUEST_URI} !^/public/
+# Jika file/folder sudah ada, langsung akses
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Cek apakah file ada di public/
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
 RewriteRule ^(.*)$ public/$1 [L,QSA]
+
+# Semua request lain ke root index.php
+RewriteRule ^ index.php [L]
