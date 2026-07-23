@@ -56,7 +56,7 @@
 
     <!-- ===== SEARCH ===== -->
     <div class="search-wrapper">
-        <div class="search-bar">
+        <div class="search-bar"> 
 
             <div class="search-row dates-row">
                 <div class="search-field checkin-field">
